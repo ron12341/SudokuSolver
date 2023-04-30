@@ -1,0 +1,96 @@
+:root {
+	--square-size: 50px;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+    flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.container {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(9, auto);
+    border: 2px solid black;
+}
+
+.blockContainer {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	
+}
+
+.square {
+	width: var(--square-size);
+	height: var(--square-size);
+	border: 1px solid black;
+    
+    text-align: center;
+    font-size: 30px;
+    background-color: transparent;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.square.error {
+	background-color: red;
+}
+
+button {
+    width: 120px;
+    height: 60px;
+    margin: 30px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.msg {
+    font-size: 30px;
+    margin-bottom: 30px;
+    visibility: hidden;
+}
+
+.horizontal-line {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+}
+
+.horizontal-line.first {
+    top: calc(var(--square-size) * 3);
+}
+
+.horizontal-line.second {
+    bottom: calc(var(--square-size) * 3);
+}
+
+.vertical-line {
+    position:absolute;
+    width: 3px;
+    height: 100%;
+    background-color: black;
+}
+
+.vertical-line.first {
+    left: calc(var(--square-size) * 3);
+}
+
+.vertical-line.second {
+    right: calc(var(--square-size) * 3);
+}
