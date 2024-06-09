@@ -243,6 +243,10 @@ let solveSudoku = () => {
 let clearBoard = () => {
     squares.forEach((square) => {
         square.value = "";
+        
+        if(square.classList.contains('error')){
+            square.classList.remove('error')
+        }
     })
     message.style.visibility = "hidden";
 }
